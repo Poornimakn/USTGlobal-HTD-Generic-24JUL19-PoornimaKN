@@ -1,0 +1,11 @@
+.grad{
+    height: 300px;
+    background: linear-gradient(rgb(158, 51, 158),pink,skyblue,crimson,rgba(173, 54, 173, 0.623));/*by default top to bottom*/
+}
+.grad1{
+    height: 300px;   
+    background: linear-gradient(to right,orange,yellow,red);
+}
+.grad2{
+    height: 300px;
+    background: radial-gradient(violet,indigo,blue,green,yellow,orange,red);

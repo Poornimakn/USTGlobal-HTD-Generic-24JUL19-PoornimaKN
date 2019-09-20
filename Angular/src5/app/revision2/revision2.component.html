@@ -1,0 +1,35 @@
+<div class="div">
+    <br><br><br>
+<div class="container col-md-4 card card-body" id="form">
+<form action="" method="POST" role="form" >
+    <legend class="text-center">Login</legend>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="" placeholder="Input field" name="name" [(ngModel)]="name">
+    </div>
+    <div>{{name}}</div><br>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="" placeholder="Input field" name="email" [(ngModel)]="email">
+    </div>
+    <div>{{email}}</div><br>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="" placeholder="Input field" name="pwd">
+    </div>
+    <div class="form-group">
+        <label for="color" >Color</label>
+        <input [style.color]="color" type="text" class="form-control" id="" placeholder="Input field" name="color" [(ngModel)]="color">
+    </div>
+
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+   
+    <button type="button" class="btn btn-outline-info" (click)="send(color)">Change</button>&nbsp; &nbsp; &nbsp;
+    <button type="submit" class="btn btn-outline-danger">Submit</button> 
+    <div>
+        <button>Color</button>
+    </div>
+</form>
+</div>
+</div>
+

@@ -1,0 +1,22 @@
+.img
+{
+    float: left;
+    border:1px solid black;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    margin-left: 10px;
+    font:25px black;
+}
+img{
+    height: 300px;
+    width:320px; 
+    transition: all 5s;   
+}
+img:hover{
+    transform: scale(1.2, 1.2); /* first takes width,second1 takes height*/
+}
+.desc{
+    margin: 10px;
+    font-family: cursive;
+}

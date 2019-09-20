@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>prime number</title>
+</head>
+<body>
+    <script>
+        var count = 0;
+        function getprime(n){
+        for(var i=2;i<=n;i++){
+            if(i%2===0)
+            {
+            count++; 
+            }
+    }
+    
+    count>2?console.log('Num is not prime'):console.log('Num is prime');
+    }
+   getprime(5);
+   console.log('');
+
+    var count = 0;
+    var getprime = function(n){
+    for(var i=2;i<=n;i++){
+            if(i%2===0)
+            {
+            count ++; 
+            }
+    }
+    
+    count>2?console.log('Num is not prime'):console.log('Num is prime');
+    }
+    getprime(15);
+    console.log('');
+
+    var count = 0;
+    (function (n){
+        for(var i=2;i<=n;i++){
+            if(i%2===0)
+            {
+            count ++; 
+            }
+    }
+    count>2?console.log('Num is not prime'):console.log('Num is prime');
+    }(10));
+    console.log('');
+
+    var count = 0;
+    var getprime = (n)=>{
+        for(var i=2;i<=n;i++){
+            if(i%2===0)
+            {
+            count ++; 
+            }
+    }
+    count>2?console.log('Num  is not prime'):console.log(' Num is prime');    
+    }
+    getprime(39);
+
+
+    </script>
+</body>
+</html>

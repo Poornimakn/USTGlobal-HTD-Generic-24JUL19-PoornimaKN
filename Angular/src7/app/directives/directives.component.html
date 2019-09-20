@@ -1,0 +1,36 @@
+<!-- ngIf -->
+<div class="container">
+<h1>************Directives*******************</h1>
+<div *ngIf="orange; else elseblock">
+    <h4>Orange is rendered</h4>
+</div>
+
+<ng-template #elseblock>
+    <h4>Color is Hidden</h4>
+</ng-template>
+
+<div *ngIf="name; then thenblock; else hiddenblock"></div>
+
+<ng-template #thenblock>
+    <h4>Hello</h4>
+</ng-template>
+
+<ng-template #hiddenblock>
+    <h4>Hidden</h4>
+</ng-template>
+
+<!-- ngSwitch -->
+<br>
+<div [ngSwitch]="color">
+    <div *ngSwitchCase="'red'">Red is rendered</div>
+    <div *ngSwitchCase="'green'">Green is rendered</div>
+    <div *ngSwitchCase="'blue'">Blue is rendered</div>
+    <div *ngSwitchDefault>Default is rendered</div>
+</div>
+
+<!-- ngFor -->
+<br>
+<div *ngFor="let arr of array;index as i;first as f;last as l;even as e;odd as o">
+    <h4>{{i}} {{arr}} First? {{f}} Last? {{l}} even? {{e}} odd? {{o}}</h4>
+</div>
+</div>

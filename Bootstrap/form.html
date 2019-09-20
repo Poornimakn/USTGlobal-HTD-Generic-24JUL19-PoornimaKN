@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+    <link rel="stylesheet" href="/bootstrap-4.3.1-dist/css/bootstrap.css">
+</head>
+<body>
+    <div class="container">   
+        <!-- form occupies 6 grids so offset-3 is taken to make form align center -->
+        <div class="card col-md-6 mt-2 offset-3">
+            <!-- card body for margin -->
+            <div class="card-body">
+            <form action="" method="POST" role="form">
+            <legend>Login</legend>
+        
+            <div class="form-group">
+                <label for="username">User Name</label>
+                <!-- form control will align form properly means gives brake and spaces -->
+                <input type="text" class="form-control" id="username" placeholder="Input field">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Input field">
+            </div>  
+            <!-- if we success to button it will become green color      -->
+            <!-- <button type="submit" class="btn btn-success">Submit</button> -->
+            <button type="submit" class="btn btn-success float-right">Submit</button>
+            </form>
+            </div>
+        </div>
+    </div>
+    <script src="/JS/jquery-3.4.1.js"></script>
+    <script src="/bootstrap-4.3.1-dist/js/bootstrap.js"></script>
+    
+</body>
+</html>

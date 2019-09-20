@@ -1,0 +1,209 @@
+1. QTD emp working in dept 20:
+	 select * from employee_info where deptid=20;
+	+-----+------------+----------------------+-------------+----------+------+------------+------------+--------+--------+----------+
+| id  | name       | emailId              | designation | mobileno | age  | DOB        | DOJ        | salary | deptid | bloodgrp |
++-----+------------+----------------------+-------------+----------+------+------------+------------+--------+--------+----------+
+| 102 | Yashaswini | yashaswini@gmail.com | ST          | 97788051 |   40 | 1958-06-02 | 2019-10-28 |  20000 |     20 | O        |
++-----+------------+----------------------+-------------+----------+------+------------+------------+--------+--------+----------+
+1 row in set (0.00 sec)
+
+2. QTD emp earning more than 25000:
+	select * from employee_info where salary>25000;
+	+-----+----------+--------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| id  | name     | emailId            | designation | mobileno  | age  | DOB        | DOJ        | salary | deptid | bloodgrp |
++-----+----------+--------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| 101 | Poornima | abc@gmail.com      | SD          |  97398051 |   21 | 1998-06-20 | 2019-09-29 |  30000 |     10 | O        |
+| 104 | Inchara  | inchara@gmail.com  | HR          | 985623451 |   23 | 1966-06-12 | 2017-06-15 |  32659 |     40 | A        |
+| 106 | Pooja    | pooja@gmail.com    | Clerk       |  96532487 |   24 | 1995-02-17 | 2015-01-03 |  98652 |     60 | B-       |
+| 109 | Shreya   | shreya@gmail.com   | ST          | 963214567 |   26 | 1994-03-14 | 2014-04-05 |  65124 |     80 | B-       |
+| 111 | Preethi  | preethi@gmail.com  | assistent   | 965845126 |   24 | 1996-09-09 | 2015-09-06 |  30000 |     90 | A-       |
+| 112 | Chinmayi | chinmayi@gmail.com | Worker      | 968452446 |   22 | 1997-12-12 | 2018-12-03 |  50000 |     60 | O-       |
++-----+----------+--------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+3. QTD all the emp whose job type is Software Developer:
+	select * from employee_info where designation='SD';
+	+-----+----------+-------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| id  | name     | emailId           | designation | mobileno  | age  | DOB        | DOJ        | salary | deptid | bloodgrp |
++-----+----------+-------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| 101 | Poornima | abc@gmail.com     | SD          |  97398051 |   21 | 1998-06-20 | 2019-09-29 |  30000 |     10 | O        |
+| 107 | Pallavi  | pallavi@gmail.com | SD          | 987456321 |   30 | 1990-06-19 | 2013-03-06 |  23564 |     50 | O-       |
++-----+----------+-------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+2 rows in set (0.00 sec)
+4. QTD emp working in dept 10,20 & 40:
+	 select * from employee_info where deptid in(10,20,40);
+	+-----+------------+----------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| id  | name       | emailId              | designation | mobileno  | age  | DOB        | DOJ        | salary | deptid | bloodgrp |
++-----+------------+----------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| 101 | Poornima   | abc@gmail.com        | SD          |  97398051 |   21 | 1998-06-20 | 2019-09-29 |  30000 |     10 | O        |
+| 102 | Yashaswini | yashaswini@gmail.com | ST          |  97788051 |   40 | 1958-06-02 | 2019-10-28 |  20000 |     20 | O        |
+| 104 | Inchara    | inchara@gmail.com    | HR          | 985623451 |   23 | 1966-06-12 | 2017-06-15 |  32659 |     40 | A        |
++-----+------------+----------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+3 rows in set (0.00 sec)
+
+5. QTD all emp whose name starts with 'S':
+	select * from employee_info where name like 'S%';
++-----+--------+------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| id  | name   | emailId          | designation | mobileno  | age  | DOB        | DOJ        | salary | deptid | bloodgrp |
++-----+--------+------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| 108 | Sneha  | sneha@gmail.com  | SE          | 965785321 |   29 | 1991-03-13 | 2014-04-04 |   6544 |     70 | O+       |
+| 109 | Shreya | shreya@gmail.com | ST          | 963214567 |   26 | 1994-03-14 | 2014-04-05 |  65124 |     80 | B-       |
+| 113 | Smitha | NULL             | Salesman    |      NULL | NULL | NULL       | NULL       |  10000 |   NULL | NULL     |
++-----+--------+------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+3 rows in set (0.03 sec)
+6. QTD all emp whose firstname is having letter 'a' as 2nd character:
+	select * from employee_info where name like '_a%';
+	+-----+------------+----------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| id  | name       | emailId              | designation | mobileno  | age  | DOB        | DOJ        | salary | deptid | bloodgrp |
++-----+------------+----------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| 102 | Yashaswini | yashaswini@gmail.com | ST          |  97788051 |   40 | 1958-06-02 | 2019-10-28 |  20000 |     20 | O        |
+| 105 | Lakshmi    | lakshmi@gmail.com    | HR          | 989856456 |   23 | 1997-05-27 | 2017-09-20 |  20359 |     50 | A-       |
+| 107 | Pallavi    | pallavi@gmail.com    | SD          | 987456321 |   30 | 1990-06-19 | 2013-03-06 |  23564 |     50 | O-       |
++-----+------------+----------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+3 rows in set (0.00 sec)
+
+7. QTD all emp whose firstname is having atleast 2 'A' character:
+	 select * from employee_info where name like '%a%a%';
++-----+------------+----------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| id  | name       | emailId              | designation | mobileno  | age  | DOB        | DOJ        | salary | deptid | bloodgrp |
++-----+------------+----------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| 102 | Yashaswini | yashaswini@gmail.com | ST          |  97788051 |   40 | 1958-06-02 | 2019-10-28 |  20000 |     20 | O        |
+| 104 | Inchara    | inchara@gmail.com    | HR          | 985623451 |   23 | 1966-06-12 | 2017-06-15 |  32659 |     40 | A        |
+| 107 | Pallavi    | pallavi@gmail.com    | SD          | 987456321 |   30 | 1990-06-19 | 2013-03-06 |  23564 |     50 | O-       |
++-----+------------+----------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+3 rows in set (0.00 sec)
+8. QTD all emp whose lastname is having letter 'H' as the second last character:
+	select * from employee_info where name like '%h_';
++-----+---------+-------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| id  | name    | emailId           | designation | mobileno  | age  | DOB        | DOJ        | salary | deptid | bloodgrp |
++-----+---------+-------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| 108 | Sneha   | sneha@gmail.com   | SE          | 965785321 |   29 | 1991-03-13 | 2014-04-04 |   6544 |     70 | O+       |
+| 110 | Neha    | neha@gmail.com    | Analyst     | 963214567 |   27 | 1995-03-14 | 2014-04-05 |  10000 |     80 | B-       |
+| 111 | Preethi | preethi@gmail.com | assistent   | 965845126 |   24 | 1996-09-09 | 2015-09-06 |  30000 |     90 | A-       |
+| 113 | Smitha  | NULL              | Salesman    |      NULL | NULL | NULL       | NULL       |  10000 |   NULL | NULL     |
++-----+---------+-------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+4 rows in set (0.00 sec)
+9. QTD all emp who are having exactly 5 characters in their lastname:
+	 select * from employee_info where name like '_____';
++-----+-------+-----------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| id  | name  | emailId         | designation | mobileno  | age  | DOB        | DOJ        | salary | deptid | bloodgrp |
++-----+-------+-----------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| 103 | Thanu | thanu@gmail.com | SE          |   9769851 |   23 | 1989-02-08 | 2009-11-02 |  20500 |     30 | B        |
+| 106 | Pooja | pooja@gmail.com | Clerk       |  96532487 |   24 | 1995-02-17 | 2015-01-03 |  98652 |     60 | B-       |
+| 108 | Sneha | sneha@gmail.com | SE          | 965785321 |   29 | 1991-03-13 | 2014-04-04 |   6544 |     70 | O+       |
++-----+-------+-----------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+3 rows in set (0.00 sec)
+10. QTD emp whose salary is between 20000 and 30000:
+	select * from employee_info where salary between 20000 and 30000;
++-----+------------+----------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| id  | name       | emailId              | designation | mobileno  | age  | DOB        | DOJ        | salary | deptid | bloodgrp |
++-----+------------+----------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| 101 | Poornima   | abc@gmail.com        | SD          |  97398051 |   21 | 1998-06-20 | 2019-09-29 |  30000 |     10 | O        |
+| 102 | Yashaswini | yashaswini@gmail.com | ST          |  97788051 |   40 | 1958-06-02 | 2019-10-28 |  20000 |     20 | O        |
+| 103 | Thanu      | thanu@gmail.com      | SE          |   9769851 |   23 | 1989-02-08 | 2009-11-02 |  20500 |     30 | B        |
+| 105 | Lakshmi    | lakshmi@gmail.com    | HR          | 989856456 |   23 | 1997-05-27 | 2017-09-20 |  20359 |     50 | A-       |
+| 107 | Pallavi    | pallavi@gmail.com    | SD          | 987456321 |   30 | 1990-06-19 | 2013-03-06 |  23564 |     50 | O-       |
+| 111 | Preethi    | preethi@gmail.com    | assistent   | 965845126 |   24 | 1996-09-09 | 2015-09-06 |  30000 |     90 | A-       |
++-----+------------+----------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+6 rows in set (0.09 sec)
+11. QTD all the details of SD in dept 20:
+	select * from employee_info where deptid=20;
++-----+------------+----------------------+-------------+----------+------+------------+------------+--------+--------+----------+
+| id  | name       | emailId              | designation | mobileno | age  | DOB        | DOJ        | salary | deptid | bloodgrp |
++-----+------------+----------------------+-------------+----------+------+------------+------------+--------+--------+----------+
+| 102 | Yashaswini | yashaswini@gmail.com | ST          | 97788051 |   40 | 1958-06-02 | 2019-10-28 |  20000 |     20 | O        |
++-----+------------+----------------------+-------------+----------+------+------------+------------+--------+--------+----------+
+12. QTD the list for all the SD in dept no 40 and having salary greater than 20000:
+	select * from employee_info where deptid=50 and designation='SD' and salary>20000;
++-----+---------+-------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| id  | name    | emailId           | designation | mobileno  | age  | DOB        | DOJ        | salary | deptid | bloodgrp |
++-----+---------+-------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| 107 | Pallavi | pallavi@gmail.com | SD          | 987456321 |   30 | 1990-06-19 | 2013-03-06 |  23564 |     50 | O-       |
++-----+---------+-------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+1 row in set (0.00 sec)
+13. QTD list all emp except those who are working in dept  10 and 20:
+	 select * from employee_info where deptid not in(10,20);
++-----+----------+--------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| id  | name     | emailId            | designation | mobileno  | age  | DOB        | DOJ        | salary | deptid | bloodgrp |
++-----+----------+--------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| 103 | Thanu    | thanu@gmail.com    | SE          |   9769851 |   23 | 1989-02-08 | 2009-11-02 |  20500 |     30 | B        |
+| 104 | Inchara  | inchara@gmail.com  | HR          | 985623451 |   23 | 1966-06-12 | 2017-06-15 |  32659 |     40 | A        |
+| 105 | Lakshmi  | lakshmi@gmail.com  | HR          | 989856456 |   23 | 1997-05-27 | 2017-09-20 |  20359 |     50 | A-       |
+| 106 | Pooja    | pooja@gmail.com    | Clerk       |  96532487 |   24 | 1995-02-17 | 2015-01-03 |  98652 |     60 | B-       |
+| 107 | Pallavi  | pallavi@gmail.com  | SD          | 987456321 |   30 | 1990-06-19 | 2013-03-06 |  23564 |     50 | O-       |
+| 108 | Sneha    | sneha@gmail.com    | SE          | 965785321 |   29 | 1991-03-13 | 2014-04-04 |   6544 |     70 | O+       |
+| 109 | Shreya   | shreya@gmail.com   | ST          | 963214567 |   26 | 1994-03-14 | 2014-04-05 |  65124 |     80 | B-       |
+| 110 | Neha     | neha@gmail.com     | Analyst     | 963214567 |   27 | 1995-03-14 | 2014-04-05 |  10000 |     80 | B-       |
+| 111 | Preethi  | preethi@gmail.com  | assistent   | 965845126 |   24 | 1996-09-09 | 2015-09-06 |  30000 |     90 | A-       |
+| 112 | Chinmayi | chinmayi@gmail.com | Worker      | 968452446 |   22 | 1997-12-12 | 2018-12-03 |  50000 |     60 | O-       |
++-----+----------+--------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+10 rows in set (0.02 sec)
+
+14. QTD list emp who are not working as SD and clerks in dept no 10 and 20 with a salary in the range of 10000 and 35000:
+	select * from employee_info where designation not in('SD','Clerks') and deptid in(10,40) and salary between 10000 and 35000;
++-----+---------+-------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| id  | name    | emailId           | designation | mobileno  | age  | DOB        | DOJ        | salary | deptid | bloodgrp |
++-----+---------+-------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| 104 | Inchara | inchara@gmail.com | HR          | 985623451 |   23 | 1966-06-12 | 2017-06-15 |  32659 |     40 | A        |
++-----+---------+-------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+1 row in set (0.00 sec)
+15. QTD list of emp whose salary is not in range of 10000 and 20000 in dept 10,20,30 except all salesman:
+	 select * from employee_info where designation not in('SD','ST') and deptid in(10,50) and salary between 10000 and 30000;
++-----+---------+-------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| id  | name    | emailId           | designation | mobileno  | age  | DOB        | DOJ        | salary | deptid | bloodgrp |
++-----+---------+-------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| 105 | Lakshmi | lakshmi@gmail.com | HR          | 989856456 |   23 | 1997-05-27 | 2017-09-20 |  20359 |     50 | A-       |
++-----+---------+-------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+1 row in set (0.00 sec)
+16. QTD to arrange all emp by their salary in descending order:
+	 select * from employee_info order by salary desc;
++-----+------------+----------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| id  | name       | emailId              | designation | mobileno  | age  | DOB        | DOJ        | salary | deptid | bloodgrp |
++-----+------------+----------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+| 106 | Pooja      | pooja@gmail.com      | Clerk       |  96532487 |   24 | 1995-02-17 | 2015-01-03 |  98652 |     60 | B-       |
+| 109 | Shreya     | shreya@gmail.com     | ST          | 963214567 |   26 | 1994-03-14 | 2014-04-05 |  65124 |     80 | B-       |
+| 112 | Chinmayi   | chinmayi@gmail.com   | Worker      | 968452446 |   22 | 1997-12-12 | 2018-12-03 |  50000 |     60 | O-       |
+| 104 | Inchara    | inchara@gmail.com    | HR          | 985623451 |   23 | 1966-06-12 | 2017-06-15 |  32659 |     40 | A        |
+| 101 | Poornima   | abc@gmail.com        | SD          |  97398051 |   21 | 1998-06-20 | 2019-09-29 |  30000 |     10 | O        |
+| 111 | Preethi    | preethi@gmail.com    | assistent   | 965845126 |   24 | 1996-09-09 | 2015-09-06 |  30000 |     90 | A-       |
+| 107 | Pallavi    | pallavi@gmail.com    | SD          | 987456321 |   30 | 1990-06-19 | 2013-03-06 |  23564 |     50 | O-       |
+| 103 | Thanu      | thanu@gmail.com      | SE          |   9769851 |   23 | 1989-02-08 | 2009-11-02 |  20500 |     30 | B        |
+| 105 | Lakshmi    | lakshmi@gmail.com    | HR          | 989856456 |   23 | 1997-05-27 | 2017-09-20 |  20359 |     50 | A-       |
+| 102 | Yashaswini | yashaswini@gmail.com | ST          |  97788051 |   40 | 1958-06-02 | 2019-10-28 |  20000 |     20 | O        |
+| 110 | Neha       | neha@gmail.com       | Analyst     | 963214567 |   27 | 1995-03-14 | 2014-04-05 |  10000 |     80 | B-       |
+| 113 | Smitha     | NULL                 | Salesman    |      NULL | NULL | NULL       | NULL       |  10000 |   NULL | NULL     |
+| 108 | Sneha      | sneha@gmail.com      | SE          | 965785321 |   29 | 1991-03-13 | 2014-04-04 |   6544 |     70 | O+       |
++-----+------------+----------------------+-------------+-----------+------+------------+------------+--------+--------+----------+
+13 rows in set (0.00 sec)
+
+17. QTD the max salary,min salary and total salary of emp:
+	 select max(salary),min(salary),sum(salary) from employee_info;
++-------------+-------------+-------------+
+| max(salary) | min(salary) | sum(salary) |
++-------------+-------------+-------------+
+|       98652 |        6544 |      417402 |
++-------------+-------------+-------------+
+1 row in set (0.00 sec)
+18. QTD the list of the number of SD in dept no 20:
+	select count(*) from employee_info where designation='SD' and deptid=10;
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.00 sec)
+19. QTD the list of highest and lowest salary earned by worker:
+	select max(salary),min(salary) from employee_info where designation='Worker';
++-------------+-------------+
+| max(salary) | min(salary) |
++-------------+-------------+
+|       50000 |       50000 |
++-------------+-------------+
+1 row in set (0.00 sec)
+
+20. QTD the total salary of all dept:
+	select sum(salary) from employee_info;
++-------------+
+| sum(salary) |
++-------------+
+|      417402 |
++-------------+
+1 row in set (0.00 sec)

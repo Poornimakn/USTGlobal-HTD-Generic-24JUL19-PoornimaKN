@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<sc>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>fibo</title>
+</head>
+<body>
+    <script>
+        //anonymous
+        var count=5;
+        var fibonacci=function(n1,n2){
+            console.log(n1+" ");
+            console.log(n2)
+            for(var i=2;i<count;i++)
+            {
+               var n3=n1+n2;
+               console.log(n3+" ")
+               n1=n2;
+               n2=n3;
+            }
+                    }
+        // fibonacci(0,1);
+           //named
+           var count=5;
+        function  fibonacci(n1,n2){
+            console.log(n1+" ");
+            console.log(n2)
+            for(var i=2;i<count;i++)
+            {
+               var n3=n1+n2;
+               console.log(n3+" ")
+               n1=n2;
+               n2=n3;
+            }
+                    }
+        fibonacci(0,1);
+           //self invoked
+           var count=5;
+        (function(n1,n2){
+            console.log(n1+" ");
+            console.log(n2)
+            for(var i=2;i<count;i++)
+            {
+               var n3=n1+n2;
+               console.log(n3+" ")
+               n1=n2;
+               n2=n3;
+            }
+                    }(0,1));
+          //fat arrow
+    var fibonacci=(n1,n2)=>{
+            console.log(n1+" ");
+            console.log(n2)
+            for(var i=2;i<count;i++)
+            {
+               var n3=n1+n2;
+               console.log(n3+" ")
+               n1=n2;
+               n2=n3;
+            }
+                    }
+                    fibonacci(0,1);
+    </script>
+</body>
+</html>

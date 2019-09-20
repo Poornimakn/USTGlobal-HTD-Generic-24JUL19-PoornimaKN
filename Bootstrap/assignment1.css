@@ -1,0 +1,19 @@
+#nav{
+    float: right; 
+}
+a{
+    color:gray;       
+    font-size:15px;
+}
+a.hover{
+    color:black;
+}
+#search{
+    color:black;
+    width:350px;
+}
+#main{
+   margin-left: 15px;
+    height: 470px;
+    width: 1000px;
+}

@@ -1,0 +1,9 @@
+<div class="row">
+    <div class="card card-body col-md-3 offset-1 mt-3" style= 'background-color: gainsboro; '*ngFor="let news of indianNews">
+        <h3>{{news.id}}</h3>
+        <img src="{{news.avatar_url}}" alt="" class="card-img-top"><br>
+        <p>{{news.node_id}}</p>
+        <p>{{news.url}}</p>
+        <br>
+    </div>
+</div>

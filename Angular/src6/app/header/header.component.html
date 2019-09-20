@@ -1,0 +1,30 @@
+<div class="row col-md-12" style="background-color: cornsilk;">
+    <br><br> <br><br> <br><br> <br><br>  
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Url</th>
+                    <th>Node_id</th>
+                    <th>Repos_url</th>
+                    <th>Type</th>
+                    <th>Organizations_url</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{user.id}}</td>
+                    <td><img src="{{user.avatar_url}}" alt="" class="card-img-top"></td>
+                    <td>{{user.node_id}}</td>
+                    <td>{{user.repos_url}}</td>
+                    <td>{{user.type}}</td>
+                    <td>{{user.organizations_url}}</td>
+                    <td>
+                        <button type="button" class="btn btn-outline-danger" (click)="deleteData(data)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</div>
+

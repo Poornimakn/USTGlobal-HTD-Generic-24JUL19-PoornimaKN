@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+    <style>
+        #abc{background-color: gainsboro;}
+    </style>
+    <link rel="stylesheet" href="/bootstrap-4.3.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/fontawesome-free-5.10.0-web/css/all.css">
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-dark"; style="height:70px;background-color: rgba(0, 0, 255, 0.658)">
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                    <p style="font-size:50px;font-family:sans-serif;font-weight:bold;color:white;">
+                    &nbsp &nbsp &nbsp &nbsp &nbspfacebook
+                    <button style="font-size:20px;background-color: lime" type="submit">Sign Up</button></p>
+                    </li>
+                </div>
+              </nav>
+              <div id="abc" style="height:700px;">
+        <div class="container">   <br><br><br>
+                <!-- form occupies 6 grids so offset-3 is taken to make form align center -->
+                <div class="card col-md-6 mt-2 offset-3" style="margin-top:20%;">
+                    <!-- card body for margin -->
+                    <div class="card-body">
+                    <form action="" method="POST" role="form">
+                    <legend> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbspLogin to Facebook</legend>
+                
+                    <div class="form-group">
+                        
+                        <!-- form control will align form properly means gives brake and spaces -->
+                        <br>
+                        <input style="width:400px;"type="text" class="form-control" id="username" placeholder="Email address or Phone Number">
+                    </div>
+                    <div class="form-group">
+                        
+                        <input style="width:400px;"" type="password" class="form-control" id="pwd" placeholder="Password">
+                    </div>  
+                    <!-- if we success to button it will become green color      -->
+                    <!-- <button type="submit" class="btn btn-success">Submit</button> -->
+                    <button type="submit" class="btn btn-info" style="width:400px;background-color: rgba(0, 0, 255, 0.658);">Login</button>
+                    <br><br>
+                    <p>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbspForgot Password? Sign Up to Facebook</p>
+                    </form>
+                    </div>
+               
+            </div>
+        </div>
+        <script src="/JS/jquery-3.4.1.js"></script>
+        <script src="/bootstrap-4.3.1-dist/js/bootstrap.js"></script> 
+    </div>
+</body>
+</html>

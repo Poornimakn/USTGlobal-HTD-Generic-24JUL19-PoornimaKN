@@ -1,0 +1,7 @@
+<div class="row col-md-12">
+<div class="col-md-4 float mt-5 card card-body" *ngFor='let apis of api'>
+    <h1>{{apis.login}}</h1>
+    <img src="{{apis.avatar_url}}" alt="" class="card-img-top">
+    <button (click)="delete(data)" class="btn btn-outline-danger">Delete</button>
+</div>
+</div>

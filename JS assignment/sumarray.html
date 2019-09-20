@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Array</title>
+</head>
+<body>
+    <script>
+         var array = [1,2,3,4,5,6];
+         var sum = 0;
+        add= function(){
+            for(var i=0;i<array.length;i++)
+            {
+                sum = sum + array[i];
+            }
+            return sum;
+        }
+    //     i = 0;
+    //     while(i<n)
+    //     {
+    //         console.log(i);
+    //             sum = sum + array[i];
+    //             i++;
+            
+    //     }
+    //     return sum;
+    // }
+        var tsum = add(array);
+        console.log(tsum);
+        console.log('=========================================');
+       
+        var array = [1,2,3,4,5,6];
+         var sum = 0;
+       
+         function add(array){
+            for(var i=0;i<array.length;i++)
+            {
+                sum = sum + array[i];
+            }
+            return sum;
+        }
+        var tsum = add(array);
+        console.log(tsum);
+        console.log('=========================================');
+       
+        var array = [1,2,3,4,5,6];
+         var sum = 0;
+       
+         (function (array){
+            for(var i=0;i<array.length;i++)
+            {
+                sum = sum + array[i];
+                
+            }
+            console.log(sum);
+        } (array));
+        console.log('=========================================');
+
+        var array = [1,2,3,4,5,6];
+         var sum = 0;
+       
+         var add = (array)=>{
+            for(var i=0;i<array.length;i++)
+            {
+                sum = sum + array[i];
+                
+            }
+         return sum;   
+        } 
+        var sum = add(array);
+        console.log(sum);
+        console.log('=========================================');
+
+
+        </script>
+</body>
+</html>

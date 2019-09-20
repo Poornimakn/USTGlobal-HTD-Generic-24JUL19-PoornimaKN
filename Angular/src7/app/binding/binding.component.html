@@ -1,0 +1,46 @@
+<div class="container">
+
+    <br>
+    <!-- interpolation -->
+    <h1>Welcome {{interpolation}}</h1> 
+
+    <!-- property binding -->
+    <a [href]="property">Property binding</a>
+    <br><br>
+    <input type="text" name="" id="" bind-disabled="isDisabled">
+
+    <!-- Class binding -->
+    <h2 class="text-success">Class Binding</h2>
+    <h3 [class]="class">Class Binding1</h3>
+    <h4 [ngClass]="class1">Class Binding2</h4>
+   
+   <!-- style binding -->
+    <h1 [style.color]="color">Style binding</h1>
+    <h2 [ngStyle]="style1">Style Binding1</h2>
+
+    <!-- attribute binding -->
+    <input type="text" name="" id="" [attr.disabled]="isDisabled">
+
+    <!-- event binding -->
+    <br><br>
+    <button (click)="sendData()">Send</button>
+    <br><br>
+    <button (click)="send($event)">Send(Event)</button>
+
+    <!-- template reference variable -->
+    <br><br>
+    <input type="text" name="name" id="" #input>
+    <button (click)="log(input.value)">Send</button>
+
+    <!-- 2-way databinding -->
+    <br><br>
+    <button (click)="bind()">Click</button>
+
+    <!-- Component Interaction -->
+    <br>
+    <h3>************@Input***************</h3>
+    <app-comp-interaction (event)="message=$event" [parentdata]="name"></app-comp-interaction>
+    <br>
+    <h3>************@Output***************</h3>
+    <h5>{{message}}</h5>
+</div>

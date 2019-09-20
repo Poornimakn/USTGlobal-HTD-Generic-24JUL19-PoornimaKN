@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS</title>
+    <script>
+        var myAge=21;
+        console.log("My Age= "+myAge);
+        var heroname="Yash";
+        console.log("Hero Name = "+heroname);
+        var hashobbies=true;
+        console.log("hashobbies = "+hashobbies);
+        var myhobbies;
+        console.log("myhobbies = "+myhobbies);
+        var fruits=null;
+        console.log("fruits = "+fruits);
+    </script>
+</head>
+<body>
+    <script>
+        var person = {
+            fname: 'Prabhas',
+            lname: 'Shetty',
+            age:40,
+            height:6,
+            weight:78,
+            color:'white',
+            getName: function(){
+                            return this.fname+ ' ' +this.lname;
+                            }
+        }
+        console.log(person);
+        var name = person.name;
+        // var name=person['name'];
+        console.log('Name = '+name);
+        var height = person.height;
+        console.log('Height = '+height);
+        var weight = person.weight;
+        console.log('Weight = '+weight);
+        console.log(person.getName); 
+
+        var fruits=['Apple','Orange','Banana','Custard'];
+        var fruit1=fruits[0];
+        var fruit2=fruits[1];
+        console.log('Fruit1 = '+fruit1);
+        console.log('Fruit2 = '+fruit2);
+        for(var i=0;i<fruits.length;i++)
+        {
+            console.log(fruits[i]);
+        }   
+
+    </script>
+</body>
+</html>

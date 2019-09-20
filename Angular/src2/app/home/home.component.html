@@ -1,0 +1,16 @@
+<!-- <div class="row mx-md-n5">
+        <div class="col px-md-5"><div class="p-3 border bg-light">Custom column padding</div></div>
+        <div class="col px-md-5"><div class="p-3 border bg-light">Custom column padding</div></div>
+      </div> -->
+<div class="row">
+    <div class="card card-body col-md-3 offset-md-1 mt-3" style= 'background-color: gainsboro;height:300px;'
+     *ngFor="let js of json">
+        <h3>Id : {{js.id}}</h3>
+        <p>UserId : {{js.userId}}</p>
+        <p>Title : {{js.title}}</p> 
+        <p>{{js.body}}</p>    
+        <br>
+    </div>    
+</div>
+
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Closure</title>
+</head>
+<body>
+    <script>
+       function sum(a,b)
+       {
+           function addSum()
+           {
+               return a+b;
+           }
+           return addSum;
+       } 
+       var addFunc=sum(10,20);
+       var total=addFunc();
+       console.log('Total:',total);
+       var addFunc1=sum(20,30);
+       var total1=addFunc1();
+       console.log('Total:',total1);
+       console.log(window);
+       console.log(this);
+       console.log(this===window);
+       var name="abc";
+       console.log(window.name);
+       console.log(this.name);
+       var person={
+           name : 'Dulquar Salman',
+           age  :  30,
+           getName:function(){
+               console.log(this);
+               console.log(window);
+               getData();
+               function getData(){
+                   console.log(this);
+               }
+               return this.name;
+           }
+       } 
+      var hname = person.getName();
+      console.log('Name:'+hname); 
+      /*for(var i=0;i<5;i++)
+      {
+          console.log(i);
+      } 
+      console.log('Value of i: '+i);
+      for(let j=0;j<5;j++){
+          console.log(j);
+      }
+      console.log('Value of j: ',+j);*/
+      var hobbies = ['Dancing','Singing','Cricket'];
+      console.log('Hobbies '+hobbies);
+      var hobbies=['numismatics'];
+      console.log('Hobbies '+hobbies);
+      hobbies=['Singing'];
+      let fruits=['Orange','Banana'];
+      console.log('Fruits '+fruits);
+      //let fruits=['Apple']; cz re-declaration
+      fruits=['Apple'];
+      console.log('Fruits '+fruits);
+      const animals=['Dog','Cat','Rat'];
+      console.log('Animals '+animals);
+     // const animals=['Bat']; cz re-declaration
+      //animals=['Bat']; cs re-initialization
+      console.log('Animals '+animals);
+      arr=[10,[20,30],[30,40]];
+      console.log(arr[1]);
+      console.log(arr[2]);
+      console.log(arr);
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "description": "TypeScript Practice Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "html",
+    "js",
+    "ts"
+  ],
+  "author": "Poornima K N",
+  "license": "ISC",
+  "dependencies": {
+    "systemjs": "^0.19.36"
+  }
+}

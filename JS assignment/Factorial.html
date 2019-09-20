@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Factorial</title>
+</head>
+<body>
+    <script>
+        //factorial anonymous
+        var fact=1;
+        var factorial=function(num){
+            for(var i=1;i<=num;i++)
+            {
+                 fact=fact*i;
+            }   
+        console.log('factorial of num'+" "+fact);
+        }
+factorial(4);
+      // named
+var fact=1;
+function factorial(num){
+    for(var i=1;i<=num;i++)
+            {
+                 fact=fact*i;
+            }   
+        console.log('factorial of num'+" "+fact);
+        }factorial(4);
+       //self-invoked
+var fact=1;
+(function(num){
+    for(var i=1;i<=num;i++)
+            {
+                 fact=fact*i;
+            }   
+        console.log('factorial of num'+" "+fact);
+        }(4));
+   //fat arrow
+   var fact=1;
+   var factorial=(num)=>{
+    for(var i=1;i<=num;i++)
+            {
+                 fact=fact*i;
+            }   
+        console.log('factorial of num'+" "+fact);
+        }
+        factorial(4);
+
+    </script>
+    
+    
+</body>
+</html>

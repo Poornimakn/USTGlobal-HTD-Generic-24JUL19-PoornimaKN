@@ -1,0 +1,625 @@
+1. To show database:
+	show databases; 
+2. To create database: 
+	create database databasename;
+3. To use database:
+	use databasename;
+4. To see tables:
+	show tables;
+5. To create table:
+	create table tablename(id int,name varchar(20),email varchar(20));
+7. To show table structure:
+	desc student;
+6. To drop table:
+	drop table tablename;
+8. To drop database:
+	 drop database databasename;	
+7. To alter(add) column in table:
+	alter table table_name add column_name column_defnition(datatypes and/or constraints);
+		or
+	alter table table_name add column column_name column_defnition(datatypes and/or constraints);
+8. To alter(drop) column in table:
+	alter table table_name drop column column_name;
+			or
+	alter table table_name drop column_name;
+9. To rename column:
+	alter table table_name change column_name newcolumn_name column-defnition;
+10. To rename table:
+	rename table table_name to newtable_name;
+
+=> we can't change database name,if we want to change it then we need to create new database and transfer data to it.
+
+11. To insert into table:
+	insert into table_name (column_name1,column_name2) values(value1,value2);
+		or
+	insert into table_name values(value1,value2 upto valuen);
+12. To see record inside the table:
+	select * from table_name;
+13. To insert more than 1 record:
+	insert into table_name values(value1,value2 upto valuen),(value1,value2 upto valuen);
+14. To update record in table:
+	update table_name set column_name=values;
+15. To delete records from table:
+	delete from table_name;	
+16. To delete all the records present in table:
+	truncate table table_name;
+17. To display(projection) particular columns from table:
+	 select column_name1,coumn_name2 from table_name;
+18. Query to display name and id who's name is ABC:
+	select id,studentName from student_info where studentName='ABC';
+19. Query to update mobileno who's id=102:
+	update student_info set mobileno=973980513 where id='102';
+20. Query to delete record who's id is 104:
+	delete from student_info where id='104';
+	
+=>To delete all the records from the table-truncate.
+=>To delete record using where clause-delete.
+=>To delete both record and table structure:drop.
+	hr,softwredeveloper,clerk,analyst,tester
+
+=> Alias:
+	to give temporary name to tabl or columns
+	Select table_name/column_name as alias_name from table_name;
+=> Distinct:
+	to display unique values present in the table
+	Select distinct col1,col2 from table_name;
+
+21. Query to display data from the table where designation is analyst and salary =10000.
+	 select * from employee_info where salary= 10000 and designation='Analyst';
+22. Query to display all the records who is working in dept no 20 or dept no 60
+	 select * from employee_info where deptid=20 or deptid=30;
+23. Query to display name,sal,emailid who is working as tester or age greater than 20
+	select name,salary,emailId from employee_info where designation='ST' or age>20;
+24. Query to display name of all the emp who is working as HR in dept no 30 or whos is working as clerk where sal is greater than 10000.
+	 select name from employee_info where (designation='HR' and deptid=30) or (designation='Clerk' and salary>10000);
+25. Query to display sal=10000 and designation=sd:
+	 select name from employee_info where designation='SD' and salary=10000;
+
+=>order of execution: not, and then or.
+
+=> Not:
+	Syntax:
+		select * from table_name where not column_name=value;
+26. Query to display all the details of emp who are not working as SD:
+	select * from employee_info where not designation='SD';
+27. Query to display all the emp excluding deptid=20 or 30:
+	select * from employee_info where not deptid=20 or deptid=30;
+28. Query to display all the emp details excluding Worker who all are working in deptid=60:
+	select * from employee_info where not(designation='worker' and not deptid=60);
+29. Query to display all the emp details who is working as salesman for deptid=20 or 50:
+	select * from employee_info where designation='SD' and (deptid=20 or deptid=50);
+30. Query to display all the emp working in deptid=20 only if their sal is grtr than 10000 and lessthan 20000 including 10000 and 25000:
+	 select * from employee_info where deptid=20 and (salary>=10000 and salary<=25000);
+31. Query to display all the records who is working as a SD and  DOB is 1994:
+
+32. Query to display emp details working in deptid 20 or 30 or 10:
+	select * from employee_info where deptid=20 or deptid=30 or deptid=10;
+
+=> In operator: used evaluate multiple values
+	Syntax: Select * from table_name where column_name in(v1,v2,v3.....vn);
+
+	select * from employee_info where deptid in (10,20,30);
+
+33. Query to display all emp detail who's designation is tester hr and analyst:
+	 select * from employee_info where designation in ('ST','HR','Analyst');
+34. Query to display all emp details who are working as a clerk in dept 20,30,40 60,70:
+	select * from employee_info where designation='Clerk' and deptid in(20,40,60,70);
+
+=> Not in : Multi value operator it will exclude the conditions given:
+	Syntax:
+		select * from table_name where column_name not in (v1,v2...vn);
+
+35. Query to display all emp details who are not working as a clerk in dept 20,30,40 60,70:
+	 select * from employee_info where designation='Clerk' and deptid not in(20,40,60,70);
+36. Query to display all details of emp who are working in dept 20,40,60 excluding salesman or analyst:
+	select * from employee_info where deptid in (20,40,60) and designation not in('Worker','Analyst');
+
+=> Between: used to filter the value in ranges(takes 3 arg)
+	Syntax:
+		select * from table_name where column_name between lowerlimit and upperlimit;
+
+37.Query to display all the details of emp who's sal in range of 20000 to 50000:
+	 select * from employee_info where salary between 20000 and 50000;
+
+38. Query to display all the details of emp who are hired in 2017:
+	select * from employee_info where DOJ between '2017-01-01' and '2017-12-31';	
+
+=> Not Between: 
+	Syntax:
+		select * from table_name where column_name not between lowerlimit and upperlimit; 
+
+39. Query to display all the details of emp excluding who are hired in 2017:
+	select * from employee_info where DOJ not between '2017-01-01' and '2017-12-31';
+40. Query to display name,sal and deptid of all emp who is working in dept no 10 or 20 excluding emp who's sal>=20500 and sal<=50000:
+	select name,salary,deptid from employee_info where deptid in (10,20) and salary not between 20500 and 50000;
+
+=> Is operator: used to check null value, if record is null gives true else false:
+	Syntax:
+		select *from table_name where column_name is null;
+
+41. Query to display emp name and annual sal if his age is null:
+	select name,salary from  employee_info where age is null;
+=> Is Not:
+
+42. Query to display emp name and annual sal if his age is not null:
+	 select name,salary from  employee_info where age is not null;
+
+=> Like: used for pattern matching. Not case sensitive
+	Syntax:
+		select *from table_name where column_name like '% or _'; //it matches string patterns only 
+=> Characters are of 2 types:Ordinary(alphabets) and 
+			     Special characters(wild card(*))=> 2 types i.e % =>matches 0 or n characters.
+									    _ =>matches exactly one characters. 
+43. Query to display all the details of emp who's naem starts with s:
+	 select name,salary from  employee_info where name like 'S%';
+44. Query to display all details of the emp who's name contains 5 characters:
+	select name,salary from  employee_info where name like '_____';
+45. Query to display name,sal,dob,doj,age of emp who's name starts with s and end with a:
+	 select name,salary,DOB,DOJ,age from  employee_info where name like 's%a';
+46. Query to display all the record of the emp who's 2nd char is h:
+	select * from  employee_info where name like '_h%';
+47. Query to display all the info of emp designation have atleast 2 s:
+	 select * from  employee_info where designation like '%s%s%';
+49. Query to display all the strings has length 5 that starts with s and 2nd last character should be h:
+	select * from  employee_info where name like 's__h_';
+50. Query to display all details of emp if name of emp starts with i or starts l:
+	 select * from  employee_info where name like 'I%' or name like 'L%';
+51. Query to display all the record of emp whose name's 3rd char is i and 6th char is a:
+	 select * from  employee_info where name like '__i__a%';
+
+=> Not like: Used to select all the string which do not match with the given string
+	Syntax:
+		select *from table_name where column_name not like '% or _'; 
+
+52. Query to display all the records of emp excluding wo's name starts with s:
+	select * from  employee_info where name not like 's%';
+
+=> Functions:
+	block of code which is used to perform a specific task.
+
+=> Attributes of function:
+	It has i/p arg,func_name and return type.
+
+=> 2 types func:
+       1. Aggregate func(Multi row):
+		passing multiple i/ps getting only 1 o/ps. 
+		 _____________
+	  i/p-->|	      |
+	  i/p-->|  Aggregate  |
+	  i/p-->|    Function |-->o/p
+	  i/p-->|             |
+	  i/p-->|_____________|
+
+		Avg(): Returns Avg Value.
+		Count(): It counts the number or rows.
+		Max(): Returns Max Value of selected column.
+		Min(): Returns Min value of selected column.
+		Sum(): Returns Sum of all values of the selected column.
+
+	2. Scalar func(Single row):
+		for every i/p we will get corresponding o/p. 
+		
+		 _____________
+	  i/p-->|	      |-->o/p
+	  i/p-->|  Scalar     |-->o/p
+	  i/p-->|    Function |-->o/p
+	  i/p-->|             |-->o/p
+	  i/p-->|_____________|-->o/p
+		
+	     => Case Manipulation:
+		
+		Upper(): It converts the value to a field to uppercase.
+			 select upper(name) from employee_info;
+		Lower(): It converts value to lowercase.
+			 select lower(name) from employee_info;
+		initcap():It converts first letter to upppercase.// this is not supported in mysql it supports only in oracle.
+
+	     => Character Manipulation:
+			
+		Length(): Func returns the length of value in text field.
+			  select length(name) from employee_info;
+		Concat(): Used to concatenate two strings.
+			  select concat(name,age) from employee_info;
+		Reverse(): Used to reverse a string.
+			   select reverse(name) from employee_info;
+		substr(): Used to extract a string from given string.It accepts 3 arg 
+			  Syntax: select substr(string,position,length);
+			  string :from which string we get new string,
+			  position: from which position we need new string in the given string,
+			  length: returns length f new string.
+		instr(): Used to check whether a substring is present or not. If substring is not present in given string then func will return 0,used to check the 				 position.
+			 Syntax:select instr(string,substring) from tablename;
+			 string :in which substring has to be searched.
+			 substring:substring.
+		replace(): Used to replace char/string in given string.
+			   Syntax: select replace(String,substring1,substring2) from table_name;
+			   string: string which needs to be replaced.
+			   substring1: char to be replaced,
+			   substring2: char replcing the other char.
+		date(),roundoff()
+53.Query to display avg sal of emp:
+	select avg(salary) from  employee_info;
+54.Query to display min,max,sum of sal:
+	select avg(salary),min(salary),max(salary),sum(salary),count(salary) from employee_info;
+55.QTD no of employee hired after 2016:
+	select count(*) from employee_info where DOJ>'2016';
+56.QTD avg sal and highest sal of dept 20,40,60:
+	select avg(salary),max(salary) from employee_info where deptid=20 and deptid=40 and deptid=60;
+57.QTD to merge name and sal:
+	select concat(name,salary) from employee_info;
+58.QTD name of all emp only 3 char:
+	select substr(name,1,3) from employee_info;
+59.QTD all details of emp whose name begin with consonent:
+	 select name from employee_info where substr(name,1,1) not in('a','e','i','o','u');
+60.QT to search the position of a in name column:
+	select instr(name,'a') from employee_info;
+61.QT to replace a with z:
+	 select replace(name,'a','z') from employee_info;
+62.QTD no of emp who is working in dept no 20 and sal=20000:
+	select count(*) from employee_info where deptid=20 and salary=20000;
+
+=> Group By: executes Group by rows after the execution of grp by the records are grouped therefore all the clause will execute after the execution of grp by clause. 
+
+=>Order of execution: From,groupby and select.
+	
+	Group rows that have the same values into summary rows.
+	It is often used with aggregate functions(COUNT,MAX,MIN,SUM,AVG) to group the result-set by one or more columns.
+	It can have multiple column
+	
+	Syntax: Select coumn_name(s) from table_name where condition group by column_name(s);
+	ex: select count(*) from employee_info group by deptid;
+
+63.QTD heighest sal of emp in each dept:
+	 select max(salary) from employee_info where deptid is not null group by deptid;
+64.QTD no of sd working in each dept:
+	select count(*) from employee_info where designation='SD' group by deptid;
+65.QTD no of emp hired on eachdate:
+	select count(*) from employee_info group by DOJ;
+66.QTD min sal in each designation:
+	 select min(salary) from employee_info group by designation;
+
+=> Having Clause:
+	used with group by clause to filter groups based on a specified condition.
+	in this we can only use an column i.e., used in group by clause.
+	Syntax:
+		select column_name(s) from table_name where condition groupby column_name(s) Having condition;
+
+=> Order of execution: from,where,groupby,having,select.
+
+=> Note:
+	Having clause executes after the execution of group by clause therefore it checks where condition after grouping.
+	It executes after grouping
+	Having clause can use a column that is used by group by.
+
+67.QTD deptid which has atleast 4 working emp:
+	select deptid from employee_info group by deptid having count(*)>=2;
+68.QTD depid which has total sal > 50000:
+	select deptid from employee_info group by deptid having sum(salary)>=50000;
+69.QTD deptid and avg sal of all dept who's avg sal is > 20000 excluding the emp who's name begins with s:
+	select name,deptid,avg(salary) as average from employee_info where name not like'S%' group by deptid having avg(salary)>20000;
+
+=> Order By:
+	Used to sort the results in ascending(asc) or descending(desc) order if the result set is neither be in ascending or descending order.
+	By default sorts in ascending order.
+	Order by clause always executes after the execution of select clause.
+	It ahould always be last clause to be written in the syntax.
+	If the group by clause is used then order by clause we can use aggregate function or  multi row func.
+	Only the column name is used in the group by clause.
+	
+	Syntax:
+		select col1,col2 from table_name order by col1,col2 asc/desc;
+
+=>Order of execution:
+	from,where,select,order.
+	
+
+70.QTD all the results of emp where sal should be in descending:
+	 select * from employee_info order by salary desc;
+
+=> Order of execution:
+	from,where,groupby,having,select,order by
+
+71.QTD emp name,designation,doj for all emp who are working in either one of the dept 10,20,30,60 sort the records in descending order of their salary: 
+	select name,designation,DOJ from employee_info where deptid in(10,20,50,60) order by salary desc;
+72. QTD deptid along with no of emp in it:
+	 select deptid,count(*) from employee_info group by deptid;
+
+SQL Yog:
+
+73. WQTD all the detail of emp who's designation is SD or ST
+
+=> Sub-Query:
+	A query written inside another query.
+	It is called as nested query or inner query.
+	Is also another way to fetch data from multiple tables.
+	It must be enclosed within parantheses.
+	Always in an query should be executed first and o/p of inner query is taken as i/p for outer query and final result will come from outer query.
+
+=> When to use subquery where clause:
+	1. if the cond contain unknown value then we can use subquery to append the known value.
+	2. if the col to be selected and the cond to be filtered and given for the two different table we can use subquery.
+
+=> 2 types of subquery:
+	1. Single row subquery.
+		if the single value operators such as (=,<=,>=,<,>,!=) are used.
+		Syntax:
+			select col1,col2.... from table where col1 operator (select col from table where expr1=value);
+	2. Multi row subquery:
+		If the operator such as  multi value operator (IN) are used.
+		We call it as "Multi row subquery".
+		Multi row subquery can return 1 or more number of rows.
+		Inner query can return any number of rows.
+		Syntax:
+			select col1,col2.... from table where col1 operator (select col from table where expr1=value);
+
+74. QTD name of the employee who is working for research department:
+	select name from employee_info where deptid = (SELECT dept_id from department_info where dept_name='Research');
+75. QTD who is working in loc which has atleast 1 a char in his name:
+	select * from employee_info where deptid in (SELECT dept_id from department_info where location like '%a%');
+76. QT obtain second max(sal) from the emp_info table:
+	select max(salary) from employee_info where salary not in(select max(salary) from employee_info);
+			or
+	select max(salary) from employee_info where salary<(select max(salary) from employee_info);
+77. QTD obtain 3rd max(sal):
+	select max(salary) from employee_info where salary <(select max(salary) from employee_info where salary <(select max(salary) from employee_info));
+
+=> Join:
+	Merging of two or more tables.
+	Used to fetch data from two or more tables.
+	Join keyword is used for joining two or more tables.
+	Min req cond for joining table is, at least no of tables should be one.
+
+=> Types of join:
+	1. Cartesian joins or cross join:
+		The record from one table is merged with each and every record of other table.
+		The record in left table will be merged with each and evry record in second table.
+		Syntax:
+			select column-name-list from table_name1 cross join table_name1;
+		It gives us combinations of each row of first table with all records in second table.
+
+78.QTD all the records using cartesian join:
+	2. Inner Join:
+		Joining 2 tables with the help of joined(commom) column is known as inner join.
+		Syntax:
+			select column-name from table1 innerjoin table2 on cond;(for mysql)
+
+		 T1	  T2			T1A1=T2A1
+		A B1     A1 B2			A B1 A1 B2
+		A 10	 B  40			B 20 B  40
+		B 20	 C  50			C 30 C  50
+		C 30	 D  60		
+
+		ex: select * from department_info inner join employee_info on employee_info.deptid=department_info.dept_id;
+
+	3. Outer Join: 	
+		a) left outer join:
+			Gives inner joins + unmatched record of left table. 
+			Unmatched record: The record that do not have any pair in the opposite table with repect to joins.
+
+			 T1	  T2			T1A1=T2A1
+			A B1     A1 B2			A B1 A1 B2
+			A 10	 B  40			B 20 B  40
+			B 20	 C  50			C 30 C  50
+			C 30	 D  60			A 10 null null
+			E 70				E 70 null null
+
+			Syntax: select * from table1 left outer join table2 on cond;
+				select * from table1,table2 where table1.column_name=table2.column_name(+);(oracle)
+		
+			ex: select * from department_info left outer join employee_info on employee_info.deptid=department_info.dept_id;
+
+		b) right outer join:
+			Gives inner joins + unmatched record of right table. 
+			Unmatched record: The record that do not have any pair in the opposite table with repect to joins.
+			
+			 T1	  T2			   T1A1=T2A1
+			A B1     A1 B2			A    B1   A1 B2
+			A 10	 B  40			B    20   B  40
+			B 20	 C  50			C    30   C  50
+			C 30	 D  60			null null d  60
+							null null
+			Syntax: select * from table1 right outer join table2 on cond;
+				select * from table1,table2 where table1.column_name=table2.column_name(+);(oracle)
+
+			ex: select * from department_info right outer join employee_info on employee_info.deptid=department_info.dept_id;
+			
+		c) full outer join:
+			Gives inner joins + all the records from both the table which do not have any pair.	
+			No syntax in oracle;
+			therefore write left outer join union right outer join.
+			Syntax:
+			 select * from table1 full outer join table2 on cond;
+Key in RDBMS:
+	1. Key attributes:
+		It is used to find attribute using which we can uniquely determine a record in a table.
+	2. Non key attributes:
+		All the attributes except key attributes are known as Non-key attributes. 
+	3. Prime Key attributes:
+		A key attributes which is choosen to be a main attribute to determine the record uniquely in the table is known as primekey attribute
+	4. Non-Prime Key attributes:
+		All key except Prime Key.
+	5. Composite Key:
+		Combination of 2 or more attribute which determine the records uniquely.
+	6. Foreign Key:
+		A key which relates 2 or more tables is called foreign key. It can accept null and duplicate values.
+		
+Functional Dependency:
+	In FD a relation exist such that an attribute determines another attribute uniquely is known as functional dependency.
+	ex: R={x,y} x and y are attributes. y is completely dependent on x, x is
+	x=determinate y=dependent.
+Types of FD:
+	Total FD : All the attributes of a relation is determined by a key attribute is known as Total FD
+			R->{a,b,c,d} here all a,b,c,d are depending on a. i.e., a->c,a->b,a->d
+	Partial FD: Relation is said to have partial FD if 
+			(i) it consists of composite key attributes
+			(ii) there exist a dependency such that an attribute can be determined by another which is a part of composite key.
+		   ex: R->{a,b,c,d} c and d are depending on a and b i.e., (ab)->cd,(ab)->c,(ab)->d,a->c,a->d,b->c,b->d
+	Transitive FD : A relation is said to be transitive FD if there exist an relation such that an attribute is determined by non-key attributes 			which interms determined by key attribute. 
+		ex: a->b
+		    b->c
+		    a->c
+	
+Limitation:
+	(i) Redundancy : to overcome this we have  normalization.
+	(ii) Anamoly : The side effect that occur while performing dml operation is known as Anamoly.
+			Types: Insert,Updtae and Delete.
+Normalization: The process of decomposing the table into smaller table in order to remove redundancies and anamolies by identifying dependencies is known as normalization.
+	or 
+The process of reducing the tables in normal forms is known as normalization
+
+Normal Form:
+	A state of table without table redundencies and anamolies is known as normal form.
+Types of Normal Form: 
+	1NF: A table is said to be in the 1st NF if it satisfy following cond
+		(i) table shud not have duplicate rows.
+		(ii) every cell in the table shud be single valued(automic value).
+	2NF: A table is said to be in the 2nd NF if it satisfy following cond
+		(i) table should be in 1NF
+		(ii) table shud not have partial FD(shud not have composite key).
+	Note: If the table consists partial FD the attribute which are responsible are removed from the table. 
+	3NF: A table is said to be in the 3rd NF if it satisfy following cond
+		(i) it shud follow 2NF.
+		(ii) table shud not have transitive FD.
+	Note: 1NF,2NF and 3NF are based on key attributes and FD of relational schema
+	BCNF
+	4NF
+ER(Entity relationship) diagram:
+	A dia describes the structure of database with help of diagram known as ER diagram.
+	It is a blueprint of database that can later be implemented as database.
+	Component of ER dia:
+		(i) Entity:			       _____
+			A rectangle box is an entity->|_____|
+		(ii) Attribute:				__
+			Ellipse represents attribute-> (__)
+		(iii) Relationship:
+			Rhombus represents relatioship-> /\
+							 \/
+
+		>> inside ellipse if we have underscore->primary key attribute.
+		>> _____ => is used to connect attributes to entity set and entity to relation set. 
+View:
+	View are logical or virtual tables that can be created on the existing table.
+	View don not occupy memory.
+	Syntax:
+		create view view_name as select * from table_name;
+	to execute view:select * from view;
+	any dml operation performed on view base table will be reflected.
+Tcl: 
+	rollback:to rollback set autocommit to false bcz by default its set to true and then insert to table an then execute rollback
+set autocommit=0;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> insert into department_info values(80,'Tester','Hassan');
+Query OK, 1 row affected (0.08 sec)
+
+
+mysql> select * from department_info;
++---------+--------------+-----------+
+| dept_id | dept_name    | location  |
++---------+--------------+-----------+
+|      10 | Accounting   | Bangalore |
+|      20 | Research     | Pune      |
+|      30 | Sales        | Delhi     |
+|      40 | Operation    | Chennai   |
+|      50 | Admin        | Mumbai    |
+|      60 | Maintainence | Goa       |
+|      70 | HR           | Bangalore |
+|      80 | Tester       | Hassan    |
++---------+--------------+-----------+
+8 rows in set (0.00 sec)
+
+mysql> rollback;
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> select * from department_info;
++---------+--------------+-----------+
+| dept_id | dept_name    | location  |
++---------+--------------+-----------+
+|      10 | Accounting   | Bangalore |
+|      20 | Research     | Pune      |
+|      30 | Sales        | Delhi     |
+|      40 | Operation    | Chennai   |
+|      50 | Admin        | Mumbai    |
+|      60 | Maintainence | Goa       |
+|      70 | HR           | Bangalore |
++---------+--------------+-----------+
+7 rows in set (0.00 sec)
+
+commit:
+	After commiting it won't rollback;
+ex:
+mysql> insert into department_info values(80,'Tester','Hassan');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from department_info;
++---------+--------------+-----------+
+| dept_id | dept_name    | location  |
++---------+--------------+-----------+
+|      10 | Accounting   | Bangalore |
+|      20 | Research     | Pune      |
+|      30 | Sales        | Delhi     |
+|      40 | Operation    | Chennai   |
+|      50 | Admin        | Mumbai    |
+|      60 | Maintainence | Goa       |
+|      70 | HR           | Bangalore |
+|      80 | Tester       | Hassan    |
++---------+--------------+-----------+
+8 rows in set (0.00 sec)
+
+mysql> commit;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> select * from department_info;
++---------+--------------+-----------+
+| dept_id | dept_name    | location  |
++---------+--------------+-----------+
+|      10 | Accounting   | Bangalore |
+|      20 | Research     | Pune      |
+|      30 | Sales        | Delhi     |
+|      40 | Operation    | Chennai   |
+|      50 | Admin        | Mumbai    |
+|      60 | Maintainence | Goa       |
+|      70 | HR           | Bangalore |
+|      80 | Tester       | Hassan    |
++---------+--------------+-----------+
+8 rows in set (0.00 sec)
+
+mysql> rollback;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from department_info;
++---------+--------------+-----------+
+| dept_id | dept_name    | location  |
++---------+--------------+-----------+
+|      10 | Accounting   | Bangalore |
+|      20 | Research     | Pune      |
+|      30 | Sales        | Delhi     |
+|      40 | Operation    | Chennai   |
+|      50 | Admin        | Mumbai    |
+|      60 | Maintainence | Goa       |
+|      70 | HR           | Bangalore |
+|      80 | Tester       | Hassan    |
++---------+--------------+-----------+
+8 rows in set (0.00 sec)
+
+Save Point:
+	Usually work with rollback
+	Syntax: 
+		SavePoint name;
+
+Stored Procedures:
+	A stored procedure is a collection or group of sql statements,store in the database's data dictionary and called from either a remote program,another stored procedure or the command line
+	or
+	A stored procedure is a prepared SQL code that you can 
+
+Syntax:
+	DELIMITER$$
+	Create procedure <procedure Name>
+	As 
+	Begin
+	<SQL Statement>;
+	End $$
+	DELIMITER;
+then we have to call it : call storedprocedurename;
+			
+

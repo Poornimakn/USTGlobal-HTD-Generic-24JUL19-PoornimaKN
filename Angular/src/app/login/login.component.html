@@ -1,0 +1,54 @@
+
+<form action="" #loginForm='ngForm' (ngSubmit)='printForm(loginForm)'>
+    <legend>Please Login</legend>
+
+    <div class="form-group">
+        <label for="uname">User Name</label>
+        <input type="email" class="form-control" name="username" id="" 
+        placeholder="User Name" minlength="5" email #username='ngModel' ngModel required>
+        <div *ngIf='username.touched && username.invalid'>
+            <div class="alert alert-danger" *ngIf='username.errors.email'>
+                Only email should entered
+            </div>
+            <div class="alert alert-danger" *ngIf='username.errors.minlength'>       
+                Minimum length of this input field is 5
+            </div>
+        </div>
+    </div>
+     <!-- *ngIf='username.invalid && username.touched' can also be given  but we have an error so use it -->
+    <!-- ngif is given so that this block will be displayed only if condition satisfies -->
+    <div class="form-group">
+        <label for="pwd">Password</label>
+        <input type="password" class="form-control" id="" placeholder="Password" 
+        name='password' #password='ngModel' ngModel required minlength="8">
+        <div *ngIf='password.invalid && password.touched'>
+            <div class="alert alert-danger" *ngIf='password.errors.pattern'>
+                Pattern doesn't match
+            </div>
+        </div>
+    </div>
+    <div class="btn-group col-md-12">
+    <button type="reset" class="btn btn-outline-success" >Reset</button>
+    <button type="submit" class="btn btn-outline-primary" [disabled]="loginForm.invalid()">Submit</button>
+    </div>
+</form>
+</div>
+<div class="container">
+    <table class="table-hover table-bordered table-dark">
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Username</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let user of users;index as i'>
+                <td>{{i+1}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.password}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

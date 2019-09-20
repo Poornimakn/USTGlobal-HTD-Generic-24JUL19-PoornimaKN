@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>circumference of circle</title>
+</head>
+<body>
+    <script>
+    var pi = 3.14;
+   circum = function(r){
+       cir = 2*pi*r;
+       return cir; 
+   }
+   console.log(circum(5));
+   console.log('******************8');
+
+   var pi = 3.14;
+    function circum (r){
+        cir = 2*pi*r;
+       return cir;    
+    }
+    console.log(circum(7));
+   console.log('****************');
+
+   var pi = 3.14;
+   (function (r){
+       cir = 2*pi*r; 
+       console.log(cir);
+   }(25));
+   console.log('**********');
+
+   var pi = 3.14;
+   var circum = (r) =>cir = 2*pi*r;
+   console.log(circum(15));
+    </script>
+</body>
+</html>

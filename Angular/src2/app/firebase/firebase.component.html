@@ -1,0 +1,44 @@
+<!-- <p>firebase works!</p> -->
+<!-- //we will create a form -->
+<div class="car">
+    <br><br>
+<div class="col-md-4 offset-md-4 py-3" style='background-image:url();border-radius: 20px;'>
+<h3 class="text-center">
+    Add Cars
+</h3>
+<form #userForm='ngForm'   
+    (ngSubmit)='postUser(userForm)'>
+    <!-- <legend>Form </legend> -->
+    <!-- <div class="form-group">
+        <input type="hidden" name="id"  class="form-control mb-3 mt-3" 
+        #id='ngModel' [(ngModel)]='firebaseService.selectedUser.id'> 
+        <!-- //this field is hidden but present -->
+    <!-- </div> --> 
+    <div class="form-group">
+      <input type="text" class="form-control" name ="brand" class="form-control mb-3 mt-3" 
+      #name='ngModel' placeholder="Brand" [(ngModel)]='firebaseService.selectedUser.brand'>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" name="model" id="" class="form-control mb-3 mt-3" 
+        #model='ngModel' placeholder="Model" required model [(ngModel)]='firebaseService.selectedUser.model'>
+    </div>
+    <div class="form-group">
+        <input type="date" class="form-control" name="date" id="" class="form-control mb-3 mt-3" 
+        #date='ngModel' placeholder="Year of release"  [(ngModel)]='firebaseService.selectedUser.date'>
+    </div>
+    <div class="form-group">
+        <input type="number" class="form-control" name="cost" id="" class="form-control mb-3 mt-3" 
+        #cost='ngModel' placeholder="cost" required cost [(ngModel)]='firebaseService.selectedUser.cost'>
+    </div>
+    <div class="form-group">
+        <input type="number" class="form-control" name="unitsold" id="" class="form-control mb-3 mt-3" 
+        #unitsold='ngModel' placeholder="Number of units sold" required unitsold [(ngModel)]='firebaseService.selectedUser.unitsold'>
+    </div>
+
+    
+
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+    &nbsp; &nbsp; &nbsp;<button type="submit" class="btn btn-success" [disabled] ='userForm.invalid'>Submit</button>
+</form>
+</div>
+</div>

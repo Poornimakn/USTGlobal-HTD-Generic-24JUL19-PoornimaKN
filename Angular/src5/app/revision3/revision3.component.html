@@ -1,0 +1,25 @@
+<table class="table table-striped table-hover" >
+    <thead>
+        <tr>
+            <th>Index</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1.</td>
+            <td>{{data}}</td>
+        </tr>
+        <tr>
+           <td>2.</td>
+            <td>Lilly</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Rose</td>
+        </tr>
+    </tbody>
+</table>
+<input type="text" name="event" id="" [(ngModel)]="childdata"><br><br>
+<button type="button" class="btn btn-outline-success" (click)="send(childdata)">Send</button>
+
